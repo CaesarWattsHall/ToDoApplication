@@ -11,14 +11,14 @@ def add_task():
         listbox_tasks.insert(tkinter.END, task)
         entry_task.delete(0, tkinter.END)
     else:
-        tkinter.messagebox.showwarning(title="WARNING!", message="Enter a damn task you fool, lol.")
+        tkinter.messagebox.showwarning(title="WARNING!", message="Please enter a task.")
 
 def delete_task():
     try:
         task_index = listbox_tasks.curselection()[0]
         listbox_tasks.delete(task_index)
     except:
-        tkinter.messagebox.showwarning(title="WARNING!", message="Enter a damn task you lazy fool, lol.")
+        tkinter.messagebox.showwarning(title="WARNING!", message="Please enter a task.")
 
 def load_tasks():
     try:
@@ -27,7 +27,7 @@ def load_tasks():
         for task in tasks:
             lisbox_tasks.insert(tkinter.END, task)
     except:
-        tkinter.messagebox.showwarning(title="WARNING!", message="So I looked around and I couldn't find that 'tasks.dat' file, bruh.")
+        tkinter.messagebox.showwarning(title="ERROR!", message="My apologies, but I couldn't find the 'tasks.dat' file.")
 
 def save_tasks():
     tasks = listbox_tasks.get(0, listbox_tasks.size())
